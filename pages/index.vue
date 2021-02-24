@@ -45,13 +45,6 @@ export default {
       this.athleteProfiles.push(res)
     }
   },
-  mounted() {
-    console.log(this.athleteProfiles)
-    for (const a of this.athleteProfiles) {
-      console.log('AAAAAAA')
-      console.log(a.imageBlob)
-    }
-  },
   fetchOnServer: true,
 }
 </script>
