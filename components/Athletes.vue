@@ -80,4 +80,18 @@ export default {
   color: #fc4c02;
   font-family: 'Octin Sports Rg' !important;
 }
+@media screen and (min-width: 800px) {
+  .athlete img {
+    width: 74px;
+  }
+  .athlete .name {
+    font-size: 18px;
+  }
+  .athlete .progress {
+    font-size: 24px;
+  }
+  .athlete {
+    margin: 10px;
+  }
+}
 </style>
