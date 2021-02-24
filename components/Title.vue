@@ -29,7 +29,7 @@ span {
 }
 @media screen and (min-width: 800px) {
   span {
-    font-size: 80px;
+    font-size: 50px;
   }
 }
 @media screen and (max-width: 500px) {

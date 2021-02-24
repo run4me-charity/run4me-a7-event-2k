@@ -20,14 +20,13 @@ export default {
 <style>
 .logo {
   margin: auto;
-  width: 480px;
 }
 
 .sm {
   width: 120px !important;
 }
 .md {
-  width: 320px !important;
+  height: 87px !important;
 }
 .lg {
   width: 480px !important;
@@ -38,10 +37,10 @@ export default {
     width: 120px !important;
   }
   .md {
-    width: 480px !important;
+    height: 87px !important;
   }
   .lg {
-    width: 570px !important;
+    width: 480px !important;
   }
 }
 </style>

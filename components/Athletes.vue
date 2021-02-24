@@ -26,9 +26,6 @@ export default {
       required: true,
     },
   },
-  mounted() {
-    console.log(this.athletes)
-  },
   methods: {
     onLoad(e) {
       e.path[1].children[0].hidden = true

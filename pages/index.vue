@@ -2,10 +2,8 @@
   <div>
     <div class="sections">
       <section class="s1">
-        <Logo size="sm" :logoPath="require('@/assets/logos/run4me.png')" />
-      </section>
-      <section class="s2">
         <Logo size="md" :logoPath="require('@/assets/logos/aware7.jpg')" />
+        <Logo size="md" :logoPath="require('@/assets/logos/run4me.png')" />
       </section>
       <section>
         <Title title="2k Challange" />
@@ -60,5 +58,12 @@ export default {
 }
 .sections * {
   margin: 5px;
+}
+.s1 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 </style>
