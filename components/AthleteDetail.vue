@@ -25,7 +25,7 @@ export default {
       required: true,
     },
     id: {
-      type: String,
+      type: Number,
       required: true,
     },
     on: {
