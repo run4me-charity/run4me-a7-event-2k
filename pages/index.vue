@@ -35,7 +35,7 @@ export default {
     }
   },
   async fetch() {
-    const Athletes = [176, 202]
+    const Athletes = [176, 202, 176, 202, 176, 202, 176]
     for (const a of Athletes) {
       const res = await fetch(
         `https://api.run4me.de/athletes/${a}/profile`

@@ -6,13 +6,12 @@
           <img :src="require('@/assets/defaults/profile.png')" />
           <img hidden="true" :src="a.profile" @load="onLoad" />
           <span class="name">{{ a.firstname }}</span>
+          <div class="progress">
+            {{ Math.floor(a.ytd_run_totals / 1000) }}
+          </div>
         </div>
         <div class="right">
-          <div>
-            <div class="progress">
-              {{ Math.floor(a.ytd_run_totals / 1000) }}
-            </div>
-          </div>
+          <div></div>
         </div>
       </div>
     </div>
@@ -40,11 +39,11 @@ export default {
 .athletes {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 
-  padding: 15px;
+  padding: 5px;
   border-radius: 10px;
 }
 .bgGrey {
@@ -55,7 +54,7 @@ export default {
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
-  margin: 10px;
+  margin: 2px;
 }
 .athlete * {
   margin: 5px;
@@ -74,7 +73,7 @@ export default {
 }
 .athlete img {
   border-radius: 50%;
-  width: 80px;
+  width: 64px;
 }
 .athlete .name {
   font-size: 18px;
@@ -82,7 +81,7 @@ export default {
 .athlete .progress {
   -webkit-text-stroke: 0px black; /* width and color */
 
-  font-size: 48px;
+  font-size: 32px;
   color: #fc4c02;
   font-family: 'Octin Sports Rg' !important;
 }
