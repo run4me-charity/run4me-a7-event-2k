@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="sections">
-      <section class="s1">
+      <div class="s1">
         <Logo size="md" :logoPath="require('@/assets/logos/aware7.jpg')" />
         <Logo size="md" :logoPath="require('@/assets/logos/run4me.png')" />
-      </section>
-      <section>
+      </div>
+      <div>
         <Title title="2k Challange" />
-      </section>
-      <section>
+      </div>
+      <div>
         <div style="margin-top: 40px"></div>
-      </section>
-      <section>
+      </div>
+      <div class="athletesContainer">
         <Athletes :athletes="athleteProfiles" />
-      </section>
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
     }
   },
   async fetch() {
-    const Athletes = [176, 202, 176, 202, 176, 202, 176]
+    const Athletes = [176, 202, 1, 3, 2, 7, 13]
     for (const a of Athletes) {
       const res = await fetch(
         `https://api.run4me.de/athletes/${a}/profile`
@@ -54,10 +54,7 @@ export default {
   justify-content: center;
   align-items: center;
 
-  margin-top: 2.5rem;
-}
-.sections * {
-  margin: 5px;
+  margin-top: 1.5rem;
 }
 .s1 {
   display: flex;
@@ -65,5 +62,8 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+.athletesContainer {
+  padding: 2.5rem;
 }
 </style>

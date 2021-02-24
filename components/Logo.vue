@@ -17,11 +17,10 @@ export default {
   },
 }
 </script>
-<style>
+<style scoped>
 .logo {
-  margin: auto;
+  padding: 1rem;
 }
-
 .sm {
   width: 120px !important;
 }
