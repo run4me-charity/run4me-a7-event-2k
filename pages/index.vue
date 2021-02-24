@@ -6,7 +6,7 @@
         <Logo size="md" :logoPath="require('@/assets/logos/run4me.png')" />
       </div>
       <div>
-        <Title title="2k Challange" />
+        <Title title="2k Challenge" />
       </div>
       <div>
         <div style="margin-top: 25px"></div>
