@@ -2,16 +2,11 @@
   <div>
     <div class="athletes bgGrey">
       <div v-for="a in athletes" :key="a.id" class="athlete">
-        <div class="left">
-          <img :src="require('@/assets/defaults/profile.png')" />
-          <img hidden="true" :src="a.profile" @load="onLoad" />
-          <span class="name">{{ a.firstname }}</span>
-          <div class="progress">
-            {{ Math.floor(a.ytd_run_totals / 1000) }}
-          </div>
-        </div>
-        <div class="right">
-          <div></div>
+        <img :src="require('@/assets/defaults/profile.png')" />
+        <img hidden="true" :src="a.profile" @load="onLoad" />
+        <span class="name">{{ a.firstname }}</span>
+        <div class="progress">
+          {{ Math.floor(a.ytd_run_totals / 1000) }}
         </div>
       </div>
     </div>
@@ -51,13 +46,13 @@ export default {
 }
 .athlete {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
+  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  margin: 2px;
+  margin: 10px;
 }
 .athlete * {
-  margin: 5px;
+  padding: 5px;
 }
 .athlete .left {
   display: flex !important;
@@ -73,7 +68,7 @@ export default {
 }
 .athlete img {
   border-radius: 50%;
-  width: 64px;
+  width: 72px;
 }
 .athlete .name {
   font-size: 18px;
@@ -81,7 +76,7 @@ export default {
 .athlete .progress {
   -webkit-text-stroke: 0px black; /* width and color */
 
-  font-size: 32px;
+  font-size: 24px;
   color: #fc4c02;
   font-family: 'Octin Sports Rg' !important;
 }
