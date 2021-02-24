@@ -9,7 +9,7 @@
         <Title title="2k Challange" />
       </div>
       <div>
-        <div style="margin-top: 40px"></div>
+        <div style="margin-top: 25px"></div>
       </div>
       <div class="athletesContainer">
         <Athletes :athletes="athleteProfiles" />
@@ -35,7 +35,7 @@ export default {
     }
   },
   async fetch() {
-    const Athletes = [176, 202, 1, 3, 2, 7, 13]
+    const Athletes = [176, 202, 1, 3, 2, 7, 13].sort()
     for (const a of Athletes) {
       const res = await fetch(
         `https://api.run4me.de/athletes/${a}/profile`
@@ -54,7 +54,7 @@ export default {
   justify-content: center;
   align-items: center;
 
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .s1 {
   display: flex;

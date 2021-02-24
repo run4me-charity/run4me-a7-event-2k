@@ -49,7 +49,7 @@ export default {
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  margin: 5px;
 }
 .athlete * {
   padding: 5px;
@@ -68,15 +68,15 @@ export default {
 }
 .athlete img {
   border-radius: 50%;
-  width: 72px;
+  width: 64px;
 }
 .athlete .name {
-  font-size: 18px;
+  font-size: 16px;
 }
 .athlete .progress {
   -webkit-text-stroke: 0px black; /* width and color */
 
-  font-size: 24px;
+  font-size: 18px;
   color: #fc4c02;
   font-family: 'Octin Sports Rg' !important;
 }
