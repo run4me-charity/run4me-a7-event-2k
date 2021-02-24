@@ -54,7 +54,7 @@ export default {
   },
 
   // call fetch only on client-side
-  fetchOnServer: true,
+  fetchOnServer: false,
 }
 </script>
 <style scoped>
