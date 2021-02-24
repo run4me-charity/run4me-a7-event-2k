@@ -36,21 +36,21 @@ export default {
       athleteProfiles: [],
     }
   },
-  async mounted() {
-    await this.fetch()
-    console.log(this.athleteProfiles)
+  async fetch() {
+    const Athletes = [176, 202]
+    for (const a of Athletes) {
+      const res = await fetch(
+        `https://api.run4me.de/athletes/${a}/profile`
+      ).then((res) => res.json())
+      this.athleteProfiles.push(res)
+    }
   },
-  methods: {
-    async fetch() {
-      const Athletes = [176, 202]
-      for (const a of Athletes) {
-        this.athleteProfiles.push(
-          await fetch(
-            `https://api.run4me.de/athletes/${a}/profile`
-          ).then((res) => res.json())
-        )
-      }
-    },
+  mounted() {
+    console.log(this.athleteProfiles)
+    for (const a of this.athleteProfiles) {
+      console.log('AAAAAAA')
+      console.log(a.imageBlob)
+    }
   },
   fetchOnServer: true,
 }
@@ -67,16 +67,5 @@ export default {
 }
 .sections * {
   margin: 5px;
-}
-</style>
-<style>
-.flex-left {
-  justify-content: flex-start !important;
-}
-.flex-row {
-  flex-direction: row;
-}
-.flex-center {
-  justify-content: center;
 }
 </style>

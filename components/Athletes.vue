@@ -3,7 +3,8 @@
     <div class="athletes bgGrey">
       <div v-for="a in athletes" :key="a.id" class="athlete">
         <div class="left">
-          <img :src="a.profile" />
+          <img :src="require('@/assets/defaults/profile.png')" />
+          <img hidden="true" :src="a.profile" @load="onLoad" />
           <span class="name">{{ a.firstname }}</span>
         </div>
         <div class="right">
@@ -23,6 +24,15 @@ export default {
     athletes: {
       type: Array,
       required: true,
+    },
+  },
+  mounted() {
+    console.log(this.athletes)
+  },
+  methods: {
+    onLoad(e) {
+      e.path[1].children[0].hidden = true
+      e.path[0].hidden = false
     },
   },
 }
