@@ -35,7 +35,7 @@ export default {
     }
   },
   async fetch() {
-    const Athletes = [176, 202, 1, 3, 2, 7, 13].sort()
+    const Athletes = [176, 202, 208, 210, 209].sort()
     for (const a of Athletes) {
       const res = await fetch(
         `https://api.run4me.de/athletes/${a}/profile`
