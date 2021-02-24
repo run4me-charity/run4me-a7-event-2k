@@ -1,6 +1,4 @@
 export default {
-  // netlify
-  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'run4me AWARE7 2k Challange',
