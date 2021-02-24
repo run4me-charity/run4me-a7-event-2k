@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/vercel-builder": "^0.20.3",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12"
   },
