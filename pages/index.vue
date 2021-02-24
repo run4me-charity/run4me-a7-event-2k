@@ -5,7 +5,7 @@
         <Logo size="sm" :logoPath="require('@/assets/logos/run4me.png')" />
       </section>
       <section class="s2">
-        <Logo size="md" :logoPath="require('@/assets/logos/aware7.svg')" />
+        <Logo size="md" :logoPath="require('@/assets/logos/aware7.jpg')" />
       </section>
       <section>
         <Title title="2k Challange" />
@@ -52,8 +52,6 @@ export default {
       }
     },
   },
-
-  // call fetch only on client-side
   fetchOnServer: true,
 }
 </script>
@@ -66,6 +64,9 @@ export default {
   align-items: center;
 
   margin-top: 2.5rem;
+}
+.sections * {
+  margin: 5px;
 }
 </style>
 <style>
