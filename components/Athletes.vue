@@ -1,29 +1,59 @@
 <template>
   <div>
     <div class="athletes bgGrey">
-      <div v-for="a in athletes" :key="a.id" class="athlete">
+      <div v-for="(a, i) in athletes" :key="a.id" class="athlete">
         <img :src="require('@/assets/defaults/profile.png')" />
-        <img hidden="true" :src="a.profile" @load="onLoad" />
+        <img
+          hidden="true"
+          :src="a.profile"
+          @click="openDetail(i)"
+          @load="onLoad"
+        />
         <span class="name">{{ a.firstname }}</span>
         <div class="progress">
           {{ Math.floor(a.ytd_run_totals / 1000) }}
         </div>
       </div>
     </div>
+    <div style="margin-top: 2.5rem">
+      <AthleteDetail
+        v-if="detail.on"
+        :on="detail.on"
+        :image="detail.athlete.profile"
+        :name="detail.athlete.firstname + ' ' + detail.athlete.lastname"
+        :id="detail.athlete.id"
+      />
+    </div>
   </div>
 </template>
 <script>
+import AthleteDetail from '@/components/AthleteDetail'
 export default {
+  components: {
+    AthleteDetail,
+  },
   props: {
     athletes: {
       type: Array,
       required: true,
     },
   },
+  data() {
+    return {
+      detail: {
+        on: false,
+        athlete: {},
+      },
+    }
+  },
   methods: {
     onLoad(e) {
       e.path[1].children[0].hidden = true
       e.path[0].hidden = false
+    },
+    openDetail(index) {
+      this.detail.athlete = Object.assign({}, this.athletes[index])
+      this.detail.on = true
     },
   },
 }
@@ -69,6 +99,15 @@ export default {
 .athlete img {
   border-radius: 50%;
   width: 64px;
+}
+.athlete img:hover {
+  padding: 0;
+  cursor: pointer;
+  border: 1px solid #fc4c02;
+}
+.athlete span a {
+  text-decoration: none;
+  color: black;
 }
 .athlete .name {
   font-size: 16px;
