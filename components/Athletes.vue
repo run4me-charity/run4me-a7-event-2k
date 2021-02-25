@@ -6,7 +6,7 @@
         <img
           hidden="true"
           :src="a.profile"
-          @click="openDetail(i)"
+          @click="updateStoreAthlete(i)"
           @load="onLoad"
         />
         <span class="name">{{ a.firstname }}</span>
@@ -15,23 +15,10 @@
         </div>
       </div>
     </div>
-    <div style="margin-top: 2.5rem">
-      <AthleteDetail
-        v-if="detail.on"
-        :on="detail.on"
-        :image="detail.athlete.profile"
-        :name="detail.athlete.firstname + ' ' + detail.athlete.lastname"
-        :id="detail.athlete.id"
-      />
-    </div>
   </div>
 </template>
 <script>
-import AthleteDetail from '@/components/AthleteDetail'
 export default {
-  components: {
-    AthleteDetail,
-  },
   props: {
     athletes: {
       type: Array,
@@ -51,9 +38,8 @@ export default {
       e.path[1].children[0].hidden = true
       e.path[0].hidden = false
     },
-    openDetail(index) {
-      this.detail.athlete = Object.assign({}, this.athletes[index])
-      this.detail.on = true
+    updateStoreAthlete(index) {
+      this.$store.commit('athlete/update', this.athletes[index])
     },
   },
 }

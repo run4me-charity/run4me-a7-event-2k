@@ -14,6 +14,19 @@
       <div class="athletesContainer">
         <Athletes :athletes="athleteProfiles" />
       </div>
+      <div>
+        <AthleteDetail
+          v-if="$store.state.athlete.detail.id"
+          :on="$store.state.athlete.detail.id > 0 ? true : false"
+          :image="$store.state.athlete.detail.profile"
+          :name="
+            $store.state.athlete.detail.firstname +
+            ' ' +
+            $store.state.athlete.detail.lastname
+          "
+          :id="$store.state.athlete.detail.id"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -22,12 +35,14 @@
 import Logo from '@/components/Logo'
 import Title from '@/components/Title'
 import Athletes from '@/components/Athletes'
+import AthleteDetail from '@/components/AthleteDetail'
 
 export default {
   components: {
     Logo,
     Title,
     Athletes,
+    AthleteDetail,
   },
   data() {
     return {
