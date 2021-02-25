@@ -1,31 +1,33 @@
 <template>
   <div>
-    <div class="sections">
-      <div class="s1">
-        <Logo size="md" :logoPath="require('@/assets/logos/aware7.jpg')" />
-        <Logo size="md" :logoPath="require('@/assets/logos/run4me.png')" />
-      </div>
-      <div>
-        <Title title="2k Challenge" />
-      </div>
-      <div>
-        <div style="margin-top: 25px"></div>
-      </div>
-      <div class="athletesContainer">
-        <Athletes :athletes="athleteProfiles" />
-      </div>
-      <div>
-        <AthleteDetail
-          v-if="$store.state.athlete.detail.id"
-          :on="$store.state.athlete.detail.id > 0 ? true : false"
-          :image="$store.state.athlete.detail.profile"
-          :name="
-            $store.state.athlete.detail.firstname +
-            ' ' +
-            $store.state.athlete.detail.lastname
-          "
-          :id="$store.state.athlete.detail.id"
-        />
+    <div class="site">
+      <div class="sections">
+        <div class="s1">
+          <Logo size="md" :logoPath="require('@/assets/logos/aware7.jpg')" />
+          <Logo size="md" :logoPath="require('@/assets/logos/run4me.png')" />
+        </div>
+        <div>
+          <Title title="2k Challenge" />
+        </div>
+        <div>
+          <div style="margin-top: 25px"></div>
+        </div>
+        <div class="athletesContainer">
+          <Athletes :athletes="athleteProfiles" />
+        </div>
+        <div>
+          <AthleteDetail
+            v-if="$store.state.athlete.detail.id"
+            :on="$store.state.athlete.detail.id > 0 ? true : false"
+            :image="$store.state.athlete.detail.profile"
+            :name="
+              $store.state.athlete.detail.firstname +
+              ' ' +
+              $store.state.athlete.detail.lastname
+            "
+            :id="$store.state.athlete.detail.id"
+          />
+        </div>
       </div>
     </div>
     <div class="bottom">
@@ -67,13 +69,15 @@ export default {
 }
 </script>
 <style scoped>
+.site {
+  min-height: 100vh;
+}
 .sections {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 .s1 {
   display: flex;
@@ -86,6 +90,6 @@ export default {
   padding: 2.5rem;
 }
 .bottom {
-  margin-top: 4.5rem;
+  margin-top: 2.5rem;
 }
 </style>
