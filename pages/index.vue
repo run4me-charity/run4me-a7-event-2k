@@ -28,6 +28,9 @@
         />
       </div>
     </div>
+    <div class="bottom">
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -36,6 +39,7 @@ import Logo from '@/components/Logo'
 import Title from '@/components/Title'
 import Athletes from '@/components/Athletes'
 import AthleteDetail from '@/components/AthleteDetail'
+import Footer from '@/components/Footer'
 
 export default {
   components: {
@@ -43,6 +47,7 @@ export default {
     Title,
     Athletes,
     AthleteDetail,
+    Footer,
   },
   data() {
     return {
@@ -68,8 +73,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  margin-top: 1rem;
+  min-height: 100vh;
 }
 .s1 {
   display: flex;
@@ -80,5 +84,8 @@ export default {
 }
 .athletesContainer {
   padding: 2.5rem;
+}
+.bottom {
+  margin-top: 4.5rem;
 }
 </style>
